@@ -1,0 +1,20 @@
+trunk (2008-04-22)
+==================
+
+  - xxx [Ingeniweb]
+
+0.3 (2008-04-22)
+================
+
+  - apply last version of the recipe template
+    [gawel]
+
+0.2 (2008-04-22)
+================
+
+  - run commands in one process
+    [gawel]
+
+  - win32 tests compat
+    [gawel]
+
