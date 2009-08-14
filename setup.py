@@ -36,7 +36,11 @@ entry_points = {"zc.buildout": [
                             "default = %s:Cmd" % entry_point,
                             "sh = %s:Cmd" % entry_point,
                             "py = %s:Python" % entry_point,
-                          ]
+                          ],
+                "zc.buildout.uninstall": [
+                            "default = %s:uninstallCmd" % entry_point,
+                            "sh = %s:uninstallCmd" % entry_point,
+                          ],
                        }
 
 

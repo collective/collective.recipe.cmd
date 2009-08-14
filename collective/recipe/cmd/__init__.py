@@ -20,6 +20,25 @@ import tempfile
 import shutil
 import os, sys
 
+def run_commands(cmds, shell): 
+    cmds = cmds.strip()
+    if not cmds:
+        return
+    if cmds:
+        lines = cmds.split('\n')
+        lines = [l.strip() for l in lines]
+        dirname = tempfile.mkdtemp()
+        if sys.platform == 'win32':
+            tmpfile = os.path.join(dirname, 'run.bat')
+            lines.insert(0, '@echo off')
+        else:
+            tmpfile = os.path.join(dirname, 'run')
+        open(tmpfile, 'w').write('\n'.join(lines))
+        if sys.platform == 'win32':
+            call(tmpfile, shell=True)
+        else:
+            call('%s %s' % (self.shell, tmpfile), shell=True)
+        shutil.rmtree(dirname)
 
 class Cmd(object):
     """This recipe is used by zc.buildout"""
@@ -46,24 +65,12 @@ class Cmd(object):
         """run the commands
         """
         cmds = self.options.get('cmds', '')
-        cmds = cmds.strip()
-        if not cmds:
-            return
-        if cmds:
-            lines = cmds.split('\n')
-            lines = [l.strip() for l in lines]
-            dirname = tempfile.mkdtemp()
-            if sys.platform == 'win32':
-                tmpfile = os.path.join(dirname, 'run.bat')
-                lines.insert(0, '@echo off')
-            else:
-                tmpfile = os.path.join(dirname, 'run')
-            open(tmpfile, 'w').write('\n'.join(lines))
-            if sys.platform == 'win32':
-                call(tmpfile, shell=True)
-            else:
-                call('%s %s' % (self.shell, tmpfile), shell=True)
-            shutil.rmtree(dirname)
+        run_commands(cmds, self.shell) 
+
+def uninstallCmd(name, options):
+    cmds = options.get('uninstall_cmds', '')
+    shell = options.get('shell', 'sh')
+    run_commands(cmds, shell)
 
 class Python(Cmd):
 
@@ -91,5 +98,3 @@ class Python(Cmd):
             open(tmpfile, 'w').write('\n'.join(lines))
             execfile(tmpfile)
             shutil.rmtree(dirname)
-
-

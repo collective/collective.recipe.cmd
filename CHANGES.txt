@@ -1,7 +1,9 @@
-trunk (2008-04-22)
+trunk (2009-08-14)
 ==================
 
-  - xxx [Ingeniweb]
+  - Add support for an 'uninstall_cmds' option to execute commands during the
+    uninstall Buildout phase.
+    [lgs, mroeder]
 
 0.3 (2008-04-22)
 ================

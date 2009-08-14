@@ -5,7 +5,7 @@ The recipe supports the following options:
 
 .. Note to recipe author!
    ----------------------
-   For each option the recipe uses you shoud include a description
+   For each option the recipe uses you should include a description
    about the purpose of the option, the format and semantics of the
    values it accepts, whether it is mandatory or optional and what the
    default value is if it is omitted.
@@ -21,6 +21,10 @@ on_update
 cmds
 
     a set of command lines
+
+uninstall_cmds
+
+    a set of command lines executed in the buildout uninstall phase
 
 shell
 
