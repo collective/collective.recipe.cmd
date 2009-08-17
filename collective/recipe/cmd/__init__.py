@@ -37,7 +37,7 @@ def run_commands(cmds, shell):
         if sys.platform == 'win32':
             call(tmpfile, shell=True)
         else:
-            call('%s %s' % (self.shell, tmpfile), shell=True)
+            call('%s %s' % (shell, tmpfile), shell=True)
         shutil.rmtree(dirname)
 
 class Cmd(object):
