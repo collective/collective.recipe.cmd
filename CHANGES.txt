@@ -1,4 +1,4 @@
-trunk (2009-08-14)
+0.4 (2009-08-18)
 ==================
 
   - Add support for an 'uninstall_cmds' option to execute commands during the
