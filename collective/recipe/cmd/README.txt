@@ -85,6 +85,7 @@ And remove it::
 
   >>> print system(buildout)
   Uninstalling cmds.
+  Running uninstall recipe.
   Installing cmds.
 
   >>> 'test.txt' in os.listdir(sample_buildout)
@@ -146,6 +147,7 @@ Ok, so now we run it::
 
   >>> print system(buildout)
   Uninstalling cmds.
+  Running uninstall recipe.
   Installing py.
   ['.installed.cfg', 'bin', 'buildout.cfg', 'develop-eggs', 'eggs', 'parts']
   ['bin', 'buildout.cfg', 'develop-eggs', 'eggs', 'parts']
