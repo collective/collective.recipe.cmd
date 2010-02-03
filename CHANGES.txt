@@ -1,7 +1,9 @@
-trunk (2009-08-18)
+0.5 (2010-02-03)
 ==================
 
-  - [XXX]
+  - dont run commands with on_install/on_update are set to false. Thanks to
+    Sean Kelly for bug report
+    [gawel]
 
 0.4 (2009-08-18)
 ==================

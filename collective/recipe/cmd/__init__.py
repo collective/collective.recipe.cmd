@@ -20,7 +20,12 @@ import tempfile
 import shutil
 import os, sys
 
-def run_commands(cmds, shell): 
+def as_bool(value):
+    if value.lower() in ('1', 'true'):
+        return True
+    return False
+
+def run_commands(cmds, shell):
     cmds = cmds.strip()
     if not cmds:
         return
@@ -45,8 +50,8 @@ class Cmd(object):
 
     def __init__(self, buildout, name, options):
         self.buildout, self.name, self.options = buildout, name, options
-        self.on_install = options.get('on_install', False)
-        self.on_update = options.get('on_update', False)
+        self.on_install = as_bool(options.get('on_install', 'false'))
+        self.on_update = as_bool(options.get('on_update', 'false'))
         self.shell = options.get('shell', 'sh')
 
     def install(self):
