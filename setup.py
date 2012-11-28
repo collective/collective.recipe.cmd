@@ -5,10 +5,11 @@ This module contains the tool of collective.recipe.cmd
 import os
 from setuptools import setup, find_packages
 
+
 def read(*rnames):
     return open(os.path.join(os.path.dirname(__file__), *rnames)).read()
 
-version = '0.5'
+version = '0.6'
 
 long_description = (
     read('README.txt')
@@ -43,8 +44,7 @@ entry_points = {"zc.buildout": [
                           ],
                        }
 
-
-tests_require=['zope.testing', 'zc.buildout']
+tests_require = ['zope.testing', 'zc.buildout']
 
 setup(name='collective.recipe.cmd',
       version=version,
@@ -56,7 +56,7 @@ setup(name='collective.recipe.cmd',
         'Intended Audience :: Developers',
         'Topic :: Software Development :: Build Tools',
         'Topic :: Software Development :: Libraries :: Python Modules',
-        'License :: OSI Approved :: GNU General Public License (GPL)',
+        'License :: OSI Approved :: BSD License',
         ],
       keywords='buildout recipe',
       author='Gael Pasgrimaud',
@@ -73,8 +73,6 @@ setup(name='collective.recipe.cmd',
                         ],
       tests_require=tests_require,
       extras_require=dict(tests=tests_require),
-      test_suite = 'collective.recipe.cmd.tests.test_docs.test_suite',
+      test_suite='collective.recipe.cmd.tests.test_docs.test_suite',
       entry_points=entry_points,
       )
-
-
