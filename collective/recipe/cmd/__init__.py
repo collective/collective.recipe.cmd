@@ -19,6 +19,7 @@ from subprocess import call
 import tempfile
 import shutil
 import os, sys
+import doctest
 
 def as_bool(value):
     if value.lower() in ('1', 'true'):
@@ -84,11 +85,6 @@ class Python(Cmd):
         """
         cmds = self.options.get('cmds', '')
         cmds = cmds.strip()
-        def undoc(l):
-            l = l.strip()
-            l = l.replace('>>> ', '')
-            l = l.replace('... ', '')
-            return l
 
         if not cmds:
             return
@@ -96,10 +92,10 @@ class Python(Cmd):
             name = self.name
             buildout = self.buildout
             options = self.options
-            lines = cmds.split('\n')
-            lines = [undoc(line) for line in lines if line.strip()]
+            parser = doctest.DocTestParser()
+            lines = [line.source for line in parser.parse(cmds) if isinstance(line, doctest.Example)]
             dirname = tempfile.mkdtemp()
             tmpfile = os.path.join(dirname, 'run.py')
-            open(tmpfile, 'w').write('\n'.join(lines))
+            open(tmpfile, 'w').writelines(lines)
             execfile(tmpfile)
             shutil.rmtree(dirname)
