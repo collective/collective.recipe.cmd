@@ -43,7 +43,7 @@ entry_points = {"zc.buildout": [
                           ],
                        }
 
-tests_require = ['zope.testing', 'zc.buildout']
+tests_require = ['zope.testing', 'zc.buildout', 'manuel']
 
 setup(name='collective.recipe.cmd',
       version=version,
