@@ -4,6 +4,8 @@
   - Fail if the script generated from ``cmds`` returns with a non-zero
     exit/status code.  [rpatterson]
 
+  - Remove GPL remnants.  [rpatterson]
+
 0.6 (2011-11-28)
 ================
 
