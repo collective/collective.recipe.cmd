@@ -12,8 +12,7 @@ def read(*rnames):
 version = '0.6'
 
 long_description = (
-    read('README.rst')
-    + '\n' +
+    '.. contents::\n\n'
     'Change history\n'
     '**************\n'
     + '\n' +
@@ -22,7 +21,7 @@ long_description = (
     'Detailed Documentation\n'
     '**********************\n'
     + '\n' +
-    read('collective', 'recipe', 'cmd', 'README.rst')
+    read('README.rst')
     + '\n' +
     'Contributors\n'
     '************\n'
