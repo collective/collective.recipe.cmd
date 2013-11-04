@@ -15,7 +15,7 @@
 # along with this program; see the file COPYING. If not, write to the
 # Free Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 """Recipe cmd"""
-from subprocess import call
+from subprocess import check_call
 import tempfile
 import shutil
 import os, sys
@@ -41,9 +41,9 @@ def run_commands(cmds, shell):
             tmpfile = os.path.join(dirname, 'run')
         open(tmpfile, 'w').write('\n'.join(lines))
         if sys.platform == 'win32':
-            call(tmpfile, shell=True)
+            check_call(tmpfile, shell=True)
         else:
-            call('%s %s' % (shell, tmpfile), shell=True)
+            check_call('%s %s' % (shell, tmpfile), shell=True)
         shutil.rmtree(dirname)
 
 class Cmd(object):

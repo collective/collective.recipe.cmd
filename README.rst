@@ -128,4 +128,30 @@ Ok, so now we run it::
   ['.installed.cfg', 'bin', 'buildout.cfg', 'develop-eggs', 'eggs', 'parts']
   ['bin', 'buildout.cfg', 'develop-eggs', 'eggs', 'parts']
   Installing py2.
-  True
+  True...
+
+If the shell script generated from the commands returns a non-zero
+exit/status code then an exception is raised and buildout fails::
+
+  >>> cfg = """
+  ... [buildout]
+  ... parts = cmds
+  ...
+  ... [cmds]
+  ... recipe = collective.recipe.cmd
+  ... on_install=true
+  ... cmds= exit 23
+  ... """
+
+  >>> write(sample_buildout, 'buildout.cfg', cfg)
+
+  >>> print system(buildout)
+  Uninstalling py2.
+  Uninstalling py.
+  Installing cmds...
+  While:
+    Installing cmds.
+  An internal error occurred due to a bug in either zc.buildout or in a
+  recipe being used:
+  Traceback (most recent call last):...
+  CalledProcessError: Command 'sh .../run' returned non-zero exit status 23

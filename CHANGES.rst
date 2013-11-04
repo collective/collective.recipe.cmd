@@ -1,3 +1,9 @@
+0.7 (2013-11-04)
+================
+
+  - Fail if the script generated from ``cmds`` returns with a non-zero
+    exit/status code.  [rpatterson]
+
 0.6 (2011-11-28)
 ================
 
