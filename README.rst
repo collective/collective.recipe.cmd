@@ -45,7 +45,7 @@ We need a config file::
 Ok, so now we can touch a file for testing::
 
   >>> print system(buildout)
-  Installing cmds
+  Installing cmds...
 
   >>> 'test.txt' in os.listdir(sample_buildout)
   True
@@ -62,7 +62,7 @@ And remove it::
   >>> print system(buildout)
   Uninstalling cmds.
   Running uninstall recipe.
-  Installing cmds
+  Installing cmds...
 
   >>> 'test.txt' in os.listdir(sample_buildout)
   False
@@ -88,7 +88,7 @@ We can run more than one commands::
   >>> write(sample_buildout, 'buildout.cfg', cfg % cmds)
 
   >>> print system(buildout)
-  Updating cmds
+  Updating cmds...
 
   >>> 'test.txt' in os.listdir(sample_buildout)
   False
