@@ -1,3 +1,9 @@
+0.8 (unreleased)
+================
+
+- Fix package distribution. [hvelarde]
+
+
 0.7 (2013-11-04)
 ================
 
