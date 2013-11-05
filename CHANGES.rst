@@ -1,3 +1,8 @@
+trunk (2013-11-05)
+==================
+
+  - Add MANIFEST.in to include required files upon release. [lgraf]
+
 0.7 (2013-11-04)
 ================
 
