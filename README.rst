@@ -7,6 +7,9 @@ collective.recipe.cmd
 Introduction
 ************
 
+.. image:: https://secure.travis-ci.org/collective/collective.recipe.cmd.png?branch=master
+    :target: http://travis-ci.org/collective/collective.recipe.cmd
+
 ``collective.recipe.cmd`` is a `Buildout`_ recipe to execute commands in the
 console user interface.
 

@@ -1,0 +1,9 @@
+language: python
+python: 2.7
+install:
+  - python bootstrap.py -c buildout.cfg
+  - bin/buildout annotate
+  - bin/buildout -N -q
+script: bin/test
+after_failure:
+  - bin/buildout annotate
