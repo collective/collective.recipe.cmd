@@ -2,35 +2,17 @@
 """
 This module contains the tool of collective.recipe.cmd
 """
-import os
-from setuptools import setup, find_packages
-
-
-def read(*rnames):
-    return open(os.path.join(os.path.dirname(__file__), *rnames)).read()
+from setuptools import find_packages
+from setuptools import setup
 
 version = '0.7'
-
+description = 'A Buildout recipe to execute commands in the console user interface'
 long_description = (
-    '.. contents::\n\n'
-    'Change history\n'
-    '**************\n'
-    + '\n' +
-    read('CHANGES.rst')
-    + '\n' +
-    'Detailed Documentation\n'
-    '**********************\n'
-    + '\n' +
-    read('README.rst')
-    + '\n' +
-    'Contributors\n'
-    '************\n'
-    + '\n' +
-    read('CONTRIBUTORS.rst')
-    + '\n' +
-    'Download\n'
-    '********\n'
-    )
+    open('README.rst').read() + '\n' +
+    open('CONTRIBUTORS.rst').read() + '\n' +
+    open('CHANGES.rst').read()
+)
+
 entry_point = 'collective.recipe.cmd'
 entry_points = {"zc.buildout": [
                             "default = %s:Cmd" % entry_point,
@@ -47,16 +29,16 @@ tests_require = ['zope.testing', 'zc.buildout', 'manuel']
 
 setup(name='collective.recipe.cmd',
       version=version,
-      description="ZC Buildout recipe to execute a commande line",
+      description=description,
       long_description=long_description,
       # Get more strings from http://www.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[
-        'Framework :: Buildout',
-        'Intended Audience :: Developers',
-        'Topic :: Software Development :: Build Tools',
-        'Topic :: Software Development :: Libraries :: Python Modules',
-        'License :: OSI Approved :: BSD License',
-        ],
+          'Framework :: Buildout',
+          'Intended Audience :: Developers',
+          'Topic :: Software Development :: Build Tools',
+          'Topic :: Software Development :: Libraries :: Python Modules',
+          'License :: OSI Approved :: BSD License',
+      ],
       keywords='buildout recipe',
       author='Gael Pasgrimaud',
       author_email='gael@gawel.org',

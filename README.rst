@@ -1,26 +1,38 @@
+*********************
+collective.recipe.cmd
+*********************
+
+.. contents::
+
+Introduction
+************
+
+``collective.recipe.cmd`` is a `Buildout`_ recipe to execute commands in the
+console user interface.
+
+.. _`Buildout`: http://buildout.org/
+
+Usage
+*****
+
 Supported options
 =================
 
 The recipe supports the following options:
 
 ``on_install``
-
     true if the commands must run on install
 
 ``on_update``
-
     true if the commands must run on update
 
 ``cmds``
-
     a set of command lines
 
 ``uninstall_cmds``
-
     a set of command lines executed in the buildout uninstall phase
 
 ``shell``
-
     a valid interpreter (POSIX only)
 
 Example usage

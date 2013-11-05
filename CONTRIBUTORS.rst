@@ -1,3 +1,6 @@
+Contributors
+************
+
 - `Alter Way Solutions <http://www.alterway.fr/solutions/>`_
 
 - Gael Pasgrimaud
