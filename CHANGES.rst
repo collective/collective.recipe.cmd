@@ -1,7 +1,7 @@
 Changelog
 *********
 
-0.8 (unreleased)
+0.8 (2013-11-05)
 ================
 
 - Fix package distribution. [hvelarde]
