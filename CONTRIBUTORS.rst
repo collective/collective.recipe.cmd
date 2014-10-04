@@ -8,3 +8,5 @@ Contributors
 - Lorenzo Gil Sanchez
 
 - Maik Röder
+
+- Josip Delić

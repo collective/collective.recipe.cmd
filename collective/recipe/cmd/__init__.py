@@ -8,6 +8,7 @@ import shutil
 import os
 import sys
 import doctest
+from collective.recipe.cmd.compat import execfile
 
 
 def as_bool(value):

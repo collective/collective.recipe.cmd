@@ -164,9 +164,4 @@ exit/status code then an exception is raised and buildout fails::
   Uninstalling py2.
   Uninstalling py.
   Installing cmds...
-  While:
-    Installing cmds.
-  An internal error occurred due to a bug in either zc.buildout or in a
-  recipe being used:
-  Traceback (most recent call last):...
-  CalledProcessError: Command 'sh .../run' returned non-zero exit status 23
+  subprocess.CalledProcessError: Command 'sh .../run' returned non-zero exit status 23
