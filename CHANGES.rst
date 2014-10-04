@@ -1,7 +1,7 @@
 Changelog
 *********
 
-0.9 (unreleased)
+0.9 (2014-10-04)
 ================
 
 - Python3. [jod]
