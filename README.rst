@@ -59,7 +59,7 @@ We need a config file::
 
 Ok, so now we can touch a file for testing::
 
-  >>> print system(buildout)
+  >>> print(system(buildout))
   Installing cmds...
 
   >>> 'test.txt' in os.listdir(sample_buildout)
@@ -74,7 +74,7 @@ And remove it::
   ...    cmds = 'rm -f %s' % test_file
   >>> write(sample_buildout, 'buildout.cfg', cfg % cmds)
 
-  >>> print system(buildout)
+  >>> print(system(buildout))
   Uninstalling cmds.
   Running uninstall recipe.
   Installing cmds...
@@ -102,7 +102,7 @@ We can run more than one commands::
   ...     cmds = 'rm -f %s' % test_file
   >>> write(sample_buildout, 'buildout.cfg', cfg % cmds)
 
-  >>> print system(buildout)
+  >>> print(system(buildout))
   Updating cmds...
 
   >>> 'test.txt' in os.listdir(sample_buildout)
@@ -119,9 +119,9 @@ We can also run some python code::
   ... on_install=true
   ... cmds= 
   ...   >>> sample_buildout = buildout.get('directory', '.')
-  ...   >>> print sorted(os.listdir(sample_buildout))
+  ...   >>> print(sorted(os.listdir(sample_buildout)))
   ...   >>> os.remove(os.path.join(sample_buildout, ".installed.cfg"))
-  ...   >>> print sorted(os.listdir(sample_buildout))
+  ...   >>> print(sorted(os.listdir(sample_buildout)))
   ... [py2]
   ... recipe = collective.recipe.cmd:py
   ... on_install=true
@@ -129,14 +129,14 @@ We can also run some python code::
   ...   >>> def myfunc(value):
   ...   ...     return value and True or False
   ...   >>> v = 20
-  ...   >>> print myfunc(v)
+  ...   >>> print(myfunc(v))
   ... """
 
   >>> write(sample_buildout, 'buildout.cfg', cfg)
 
 Ok, so now we run it::
 
-  >>> print system(buildout)
+  >>> print(system(buildout))
   Uninstalling cmds.
   Running uninstall recipe.
   Installing py.
@@ -160,7 +160,7 @@ exit/status code then an exception is raised and buildout fails::
 
   >>> write(sample_buildout, 'buildout.cfg', cfg)
 
-  >>> print system(buildout)
+  >>> print(system(buildout))
   Uninstalling py2.
   Uninstalling py.
   Installing cmds...

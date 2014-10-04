@@ -5,13 +5,16 @@
 from subprocess import check_call
 import tempfile
 import shutil
-import os, sys
+import os
+import sys
 import doctest
+
 
 def as_bool(value):
     if value.lower() in ('1', 'true'):
         return True
     return False
+
 
 def run_commands(cmds, shell):
     cmds = cmds.strip()
@@ -33,7 +36,9 @@ def run_commands(cmds, shell):
             check_call('%s %s' % (shell, tmpfile), shell=True)
         shutil.rmtree(dirname)
 
+
 class Cmd(object):
+
     """This recipe is used by zc.buildout"""
 
     def __init__(self, buildout, name, options):
@@ -58,12 +63,14 @@ class Cmd(object):
         """run the commands
         """
         cmds = self.options.get('cmds', '')
-        run_commands(cmds, self.shell) 
+        run_commands(cmds, self.shell)
+
 
 def uninstallCmd(name, options):
     cmds = options.get('uninstall_cmds', '')
     shell = options.get('shell', 'sh')
     run_commands(cmds, shell)
+
 
 class Python(Cmd):
 
@@ -80,7 +87,10 @@ class Python(Cmd):
             buildout = self.buildout
             options = self.options
             parser = doctest.DocTestParser()
-            lines = [line.source for line in parser.parse(cmds) if isinstance(line, doctest.Example)]
+            lines = [
+                line.source for line in parser.parse(cmds) if isinstance(
+                    line,
+                    doctest.Example)]
             dirname = tempfile.mkdtemp()
             tmpfile = os.path.join(dirname, 'run.py')
             open(tmpfile, 'w').writelines(lines)

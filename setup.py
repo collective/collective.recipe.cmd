@@ -15,15 +15,15 @@ long_description = (
 
 entry_point = 'collective.recipe.cmd'
 entry_points = {"zc.buildout": [
-                            "default = %s:Cmd" % entry_point,
-                            "sh = %s:Cmd" % entry_point,
-                            "py = %s:Python" % entry_point,
-                          ],
-                "zc.buildout.uninstall": [
-                            "default = %s:uninstallCmd" % entry_point,
-                            "sh = %s:uninstallCmd" % entry_point,
-                          ],
-                       }
+    "default = %s:Cmd" % entry_point,
+    "sh = %s:Cmd" % entry_point,
+    "py = %s:Python" % entry_point,
+],
+    "zc.buildout.uninstall": [
+    "default = %s:uninstallCmd" % entry_point,
+    "sh = %s:uninstallCmd" % entry_point,
+],
+}
 
 tests_require = ['zope.testing', 'zc.buildout', 'manuel']
 
@@ -31,7 +31,8 @@ setup(name='collective.recipe.cmd',
       version=version,
       description=description,
       long_description=long_description,
-      # Get more strings from http://www.python.org/pypi?%3Aaction=list_classifiers
+      # Get more strings from
+      # http://www.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[
           'Framework :: Buildout',
           'Intended Audience :: Developers',
