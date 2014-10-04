@@ -164,4 +164,4 @@ exit/status code then an exception is raised and buildout fails::
   Uninstalling py2.
   Uninstalling py.
   Installing cmds...
-  subprocess.CalledProcessError: Command 'sh .../run' returned non-zero exit status 23
+  ...CalledProcessError: Command 'sh .../run' returned non-zero exit status 23
