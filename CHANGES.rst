@@ -4,7 +4,7 @@ Changelog
 0.10 (unreleased)
 =================
 
-- Nothing changed yet.
+- Fixed PyPy compatibility. [hathawsh]
 
 
 0.9 (2014-10-04)

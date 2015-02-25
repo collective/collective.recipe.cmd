@@ -30,7 +30,9 @@ def run_commands(cmds, shell):
             lines.insert(0, '@echo off')
         else:
             tmpfile = os.path.join(dirname, 'run')
-        open(tmpfile, 'w').write('\n'.join(lines))
+        f = open(tmpfile, 'w')
+        f.write('\n'.join(lines))
+        f.close()
         if sys.platform == 'win32':
             check_call(tmpfile, shell=True)
         else:
@@ -94,6 +96,8 @@ class Python(Cmd):
                     doctest.Example)]
             dirname = tempfile.mkdtemp()
             tmpfile = os.path.join(dirname, 'run.py')
-            open(tmpfile, 'w').writelines(lines)
+            f = open(tmpfile, 'w')
+            f.writelines(lines)
+            f.close()
             execfile(tmpfile)
             shutil.rmtree(dirname)
