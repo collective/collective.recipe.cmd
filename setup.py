@@ -5,7 +5,7 @@ This module contains the tool of collective.recipe.cmd
 from setuptools import find_packages
 from setuptools import setup
 
-version = '0.10'
+version = '0.11.dev0'
 description = 'A Buildout recipe to execute commands in the console user interface'
 long_description = (
     open('README.rst').read() + '\n' +
