@@ -1,7 +1,7 @@
 Changelog
 *********
 
-0.10 (unreleased)
+0.10 (2015-02-25)
 =================
 
 - Fixed PyPy compatibility. [hathawsh]
