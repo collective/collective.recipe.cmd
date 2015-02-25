@@ -1,16 +1,15 @@
 # -*- coding: utf-8 -*-
-"""
-Doctest runner for 'collective.recipe.cmd'.
-"""
-__docformat__ = 'restructuredtext'
-
 import os
 import sys
 import unittest
 import zc.buildout.tests
 import zc.buildout.testing
-
 from zope.testing import doctest, renormalizing
+"""
+Doctest runner for 'collective.recipe.cmd'.
+"""
+__docformat__ = 'restructuredtext'
+
 
 optionflags = (doctest.ELLIPSIS |
                doctest.NORMALIZE_WHITESPACE |
