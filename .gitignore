@@ -3,3 +3,4 @@ bin
 develop-eggs
 *.pyc
 *.egg-info
+eggs
