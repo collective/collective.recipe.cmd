@@ -4,7 +4,10 @@ Changelog
 0.11 (unreleased)
 =================
 
-- Nothing changed yet.
+- Add support for Python 3.2 and PyPy3.
+- Add support for testing with tox.
+- Fix compatibility with ``zope.testing`` 4.2.0.
+- Add version and implementation trove classifiers.
 
 
 0.10 (2015-02-25)

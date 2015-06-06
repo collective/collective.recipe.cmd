@@ -1,14 +1,15 @@
 language: python
 python:
   - "2.7"
+  - "3.2"
   - "3.3"
   - "3.4"
-#  - "2.6"
+  - "pypy"
+  - "pypy3"
 install:
   - python bootstrap.py -c buildout.cfg
   - bin/buildout annotate
   - bin/buildout -N -q
-# - if [[ $TRAVIS_PYTHON_VERSION == '2.6' ]]; then pip install --use-mirrors unittest2; fi
 script: bin/test
 after_failure:
   - bin/buildout annotate

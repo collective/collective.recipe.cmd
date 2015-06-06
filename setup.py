@@ -2,16 +2,16 @@
 """
 This module contains the tool of collective.recipe.cmd
 """
+import codecs
 from setuptools import find_packages
 from setuptools import setup
 
 version = '0.11.dev0'
 description = 'A Buildout recipe to execute commands in the console user interface'
-long_description = (
-    open('README.rst').read() + '\n' +
-    open('CONTRIBUTORS.rst').read() + '\n' +
-    open('CHANGES.rst').read()
-)
+long_description = ''
+for f in 'README.rst', 'CONTRIBUTORS.rst', 'CHANGES.rst':
+    with codecs.open(f, 'r', encoding='UTF-8') as of:
+        long_description += of.read() + '\n'
 
 entry_point = 'collective.recipe.cmd'
 entry_points = {"zc.buildout": [
@@ -39,6 +39,15 @@ setup(name='collective.recipe.cmd',
           'Topic :: Software Development :: Build Tools',
           'Topic :: Software Development :: Libraries :: Python Modules',
           'License :: OSI Approved :: BSD License',
+          'Programming Language :: Python',
+          'Programming Language :: Python :: 2',
+          'Programming Language :: Python :: 2.7',
+          'Programming Language :: Python :: 3',
+          'Programming Language :: Python :: 3.2',
+          'Programming Language :: Python :: 3.3',
+          'Programming Language :: Python :: 3.4',
+          'Programming Language :: Python :: Implementation :: CPython',
+          'Programming Language :: Python :: Implementation :: PyPy',
       ],
       keywords='buildout recipe',
       author='Gael Pasgrimaud',
