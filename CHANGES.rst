@@ -1,7 +1,7 @@
 Changelog
 *********
 
-0.11 (unreleased)
+0.11 (2015-06-06)
 =================
 
 - Add support for Python 3.2 and PyPy3.
