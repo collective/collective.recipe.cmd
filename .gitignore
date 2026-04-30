@@ -4,3 +4,4 @@ develop-eggs
 *.pyc
 *.egg-info
 eggs
+venv
