@@ -1,0 +1,38 @@
+name: Tests
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    permissions:
+      contents: read
+    strategy:
+      fail-fast: false
+      matrix:
+        config:
+        # [Python version, visual name, tox env]
+        - ["3.10", "6.1 on py3.10", "py310-plone61"]
+        - ["3.13", "6.1 on py3.13", "py313-plone61"]
+        - ["3.10", "6.2 on py3.10", "py310-plone62"]
+        - ["3.14", "6.2 on py3.14", "py314-plone62"]
+
+    runs-on: ubuntu-latest
+    name: ${{ matrix.config[1] }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Install uv + caching
+        uses: astral-sh/setup-uv@v8.1.0
+        with:
+          enable-cache: true
+          cache-dependency-glob: |
+            setup.py
+            tox.ini
+          python-version: ${{ matrix.config[0] }}
+
+      - name: Test
+        run: uvx --with tox-uv tox -e ${{ matrix.config[2] }}
