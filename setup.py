@@ -3,7 +3,6 @@
 This module contains the tool of collective.recipe.cmd
 """
 import codecs
-from setuptools import find_packages
 from setuptools import setup
 
 version = '0.12.dev0'
@@ -27,42 +26,43 @@ entry_points = {"zc.buildout": [
 
 tests_require = ['zope.testing', 'zc.buildout', 'manuel']
 
-setup(name='collective.recipe.cmd',
-      version=version,
-      description=description,
-      long_description=long_description,
-      # Get more strings from
-      # http://www.python.org/pypi?%3Aaction=list_classifiers
-      classifiers=[
-          'Framework :: Buildout',
-          'Intended Audience :: Developers',
-          'Topic :: Software Development :: Build Tools',
-          'Topic :: Software Development :: Libraries :: Python Modules',
-          'License :: OSI Approved :: BSD License',
-          'Programming Language :: Python',
-          'Programming Language :: Python :: 2',
-          'Programming Language :: Python :: 2.7',
-          'Programming Language :: Python :: 3',
-          'Programming Language :: Python :: 3.2',
-          'Programming Language :: Python :: 3.3',
-          'Programming Language :: Python :: 3.4',
-          'Programming Language :: Python :: Implementation :: CPython',
-          'Programming Language :: Python :: Implementation :: PyPy',
-      ],
-      keywords='buildout recipe',
-      author='Gael Pasgrimaud',
-      author_email='gael@gawel.org',
-      url='http://plone.org/products/collective-recipes',
-      license='BSD',
-      packages=find_packages(exclude=['ez_setup']),
-      include_package_data=True,
-      zip_safe=False,
-      install_requires=['setuptools',
-                        'zc.buildout'
-                        # -*- Extra requirements: -*-
-                        ],
-      tests_require=tests_require,
-      extras_require=dict(tests=tests_require),
-      test_suite='collective.recipe.cmd.tests.test_docs.test_suite',
-      entry_points=entry_points,
-      )
+setup(
+    name='collective.recipe.cmd',
+    version=version,
+    description=description,
+    long_description=long_description,
+    # Get more strings from
+    # http://www.python.org/pypi?%3Aaction=list_classifiers
+    classifiers=[
+        'Framework :: Buildout',
+        'Intended Audience :: Developers',
+        'Topic :: Software Development :: Build Tools',
+        'Topic :: Software Development :: Libraries :: Python Modules',
+        'License :: OSI Approved :: BSD License',
+        'Programming Language :: Python',
+        'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11',
+        'Programming Language :: Python :: 3.12',
+        'Programming Language :: Python :: 3.13',
+        'Programming Language :: Python :: 3.14',
+        'Programming Language :: Python :: Implementation :: CPython',
+        'Programming Language :: Python :: Implementation :: PyPy',
+    ],
+    keywords='buildout recipe',
+    author='Gael Pasgrimaud',
+    author_email='gael@gawel.org',
+    url='http://plone.org/products/collective-recipes',
+    license='BSD',
+    include_package_data=True,
+    zip_safe=False,
+    python_requires=">=3.10",
+    install_requires=[
+        'setuptools',
+        'zc.buildout'
+        # -*- Extra requirements: -*-
+    ],
+    tests_require=tests_require,
+    extras_require=dict(tests=tests_require),
+    test_suite='collective.recipe.cmd.tests.test_docs.test_suite',
+    entry_points=entry_points,
+  )
