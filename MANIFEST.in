@@ -1,5 +1,5 @@
 include *.rst
-graft collective
+graft src
 global-exclude *.pyc
 exclude bootstrap.py
 exclude buildout.cfg
