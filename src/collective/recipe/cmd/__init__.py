@@ -2,12 +2,11 @@
 
 """Recipe cmd"""
 
-from pathlib import Path
-from subprocess import check_call
-
 import doctest
 import sys
 import tempfile
+from pathlib import Path
+from subprocess import check_call
 
 
 def as_bool(value):
@@ -83,7 +82,9 @@ class Python(Cmd):
         options = self.options
         parser = doctest.DocTestParser()
         parsed = parser.parse(cmds)
-        lines = [item.source for item in parsed if isinstance(item, doctest.Example)]
+        lines = [
+            item.source for item in parsed if isinstance(
+                item, doctest.Example)]
         with tempfile.TemporaryDirectory() as dirname:
             tmpfile = Path(dirname) / "run.py"
             tmpfile.write_text("".join(lines) + "\n")

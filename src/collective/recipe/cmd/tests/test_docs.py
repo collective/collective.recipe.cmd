@@ -1,10 +1,11 @@
-from zope.testing import renormalizing
-
 import doctest
 import os
 import sys
 import unittest
+
 import zc.buildout.testing
+from zope.testing import renormalizing
+
 
 """
 Doctest runner for 'collective.recipe.cmd'.
@@ -12,9 +13,8 @@ Doctest runner for 'collective.recipe.cmd'.
 __docformat__ = "restructuredtext"
 
 
-optionflags = (
-    doctest.ELLIPSIS | doctest.NORMALIZE_WHITESPACE | doctest.REPORT_ONLY_FIRST_FAILURE
-)
+optionflags = (doctest.ELLIPSIS | doctest.NORMALIZE_WHITESPACE |
+               doctest.REPORT_ONLY_FIRST_FAILURE)
 
 
 def setUp(test):

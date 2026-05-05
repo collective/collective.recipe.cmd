@@ -1,16 +1,17 @@
-# -*- coding: utf-8 -*-
 """
 This module contains the tool of collective.recipe.cmd
 """
-import codecs
+from pathlib import Path
+
 from setuptools import setup
 
+
 version = '0.12.dev0'
-description = 'A Buildout recipe to execute commands in the console user interface'
-long_description = ''
-for f in 'README.rst', 'CONTRIBUTORS.rst', 'CHANGES.rst':
-    with codecs.open(f, 'r', encoding='UTF-8') as of:
-        long_description += of.read() + '\n'
+description = 'Buildout recipe to execute shell commands.'
+long_description = '\n'.join(
+    Path(f).read_text(encoding='utf-8')
+    for f in ('README.rst', 'CONTRIBUTORS.rst', 'CHANGES.rst')
+)
 
 entry_point = 'collective.recipe.cmd'
 entry_points = {"zc.buildout": [
@@ -24,7 +25,7 @@ entry_points = {"zc.buildout": [
 ],
 }
 
-tests_require = ['zope.testing', 'zc.buildout', 'manuel']
+tests_require = ['zope.testing', 'zope.testrunner', 'zc.buildout', 'manuel']
 
 setup(
     name='collective.recipe.cmd',
@@ -46,7 +47,6 @@ setup(
         'Programming Language :: Python :: 3.13',
         'Programming Language :: Python :: 3.14',
         'Programming Language :: Python :: Implementation :: CPython',
-        'Programming Language :: Python :: Implementation :: PyPy',
     ],
     keywords='buildout recipe',
     author='Gael Pasgrimaud',
@@ -62,7 +62,7 @@ setup(
         # -*- Extra requirements: -*-
     ],
     tests_require=tests_require,
-    extras_require=dict(tests=tests_require),
+    extras_require=dict(test=tests_require),
     test_suite='collective.recipe.cmd.tests.test_docs.test_suite',
     entry_points=entry_points,
-  )
+)
