@@ -6,7 +6,7 @@ from pathlib import Path
 from setuptools import setup
 
 
-version = '0.12.dev0'
+version = '1.0.0.dev0'
 description = 'Buildout recipe to execute shell commands.'
 long_description = '\n'.join(
     Path(f).read_text(encoding='utf-8')

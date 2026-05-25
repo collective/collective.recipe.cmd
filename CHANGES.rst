@@ -1,10 +1,17 @@
 Changelog
 *********
 
-0.12 (unreleased)
-=================
+1.0.0 (unreleased)
+==================
 
-- Nothing changed yet.
+- Drop support for Python 2 and Python 3 versions older then 3.10.
+  [szakitibi]
+
+- Configure with zope.meta.
+  [szakitibi]
+
+- Switch to PEP 420 native namespace packages.
+  [szakitibi]
 
 
 0.11 (2015-06-06)
