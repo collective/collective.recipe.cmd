@@ -118,6 +118,7 @@ We can also run some python code::
   ... recipe = collective.recipe.cmd:py
   ... on_install=true
   ... cmds= 
+  ...   >>> import os
   ...   >>> sample_buildout = buildout.get('directory', '.')
   ...   >>> print(sorted(os.listdir(sample_buildout)))
   ...   >>> os.remove(os.path.join(sample_buildout, ".installed.cfg"))
@@ -164,4 +165,4 @@ exit/status code then an exception is raised and buildout fails::
   Uninstalling py2.
   Uninstalling py.
   Installing cmds...
-  ...CalledProcessError: Command 'sh .../run' returned non-zero exit status 23
+  ...subprocess.CalledProcessError: Command 'sh .../run' returned non-zero exit status 23.
