@@ -1,7 +1,7 @@
 Changelog
 *********
 
-1.0.0 (unreleased)
+1.0.0 (2026-08-13)
 ==================
 
 - Drop support for Python 2 and Python 3 versions older then 3.10.
