@@ -52,12 +52,11 @@ setup(
     keywords='buildout recipe',
     author='Gael Pasgrimaud',
     author_email='gael@gawel.org',
-    url='http://plone.org/products/collective-recipes',
+    url='https://github.com/collective/collective.recipe.cmd',
     license='BSD',
     include_package_data=True,
     zip_safe=False,
     install_requires=[
-        'setuptools',
         'zc.buildout',
     ],
     extras_require={
