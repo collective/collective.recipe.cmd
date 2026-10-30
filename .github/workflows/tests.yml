@@ -20,7 +20,7 @@ jobs:
         config:
         # [Python version, tox env]
         - ["3.11", "release-check"]
-        - ["3.11", "lint"]
+        - ["3.13", "lint"]
         - ["3.10", "py310-plone61"]
         - ["3.11", "py311-plone61"]
         - ["3.13", "py313-plone61"]
