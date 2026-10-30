@@ -117,7 +117,7 @@ We can also run some python code::
   ... [py]
   ... recipe = collective.recipe.cmd:py
   ... on_install=true
-  ... cmds= 
+  ... cmds=
   ...   >>> import os
   ...   >>> sample_buildout = buildout.get('directory', '.')
   ...   >>> print(sorted(os.listdir(sample_buildout)))

@@ -1,8 +1,8 @@
-# Generated from:
-# https://github.com/zopefoundation/meta/tree/master/config/buildout-recipe
+# Generated with zope.meta (https://zopemeta.readthedocs.io/) from:
+# https://github.com/zopefoundation/meta/tree/master/src/zope/meta/buildout-recipe
 [meta]
 template = "buildout-recipe"
-commit-id = "c35b46cb"
+commit-id = "48e61454"
 
 [python]
 with-sphinx-doctests = false
@@ -11,6 +11,7 @@ with-future-python = false
 with-pypy = false
 with-macos = false
 with-windows = false
+with-free-threaded-python = false
 
 [coverage]
 fail-under = 0
